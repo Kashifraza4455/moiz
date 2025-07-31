@@ -770,7 +770,7 @@
 	<script src="js/google-map.js"></script>
 
 	<script src="js/main.js"></script>
-	<script>
+<script>
   const form = document.getElementById("contact-form");
 
   form.addEventListener("submit", async function (e) {
@@ -783,7 +783,8 @@
       message: form.message.value,
     };
 
-    const res = await fetch("http://localhost:3001/send-email", {
+    // ✅ Replace this with your actual backend URL on Render
+    const res = await fetch("https://clyde-backend.onrender.com/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -798,6 +799,7 @@
     }
   });
 </script>
+
 
 
 </body>
