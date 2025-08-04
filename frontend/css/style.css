@@ -13533,23 +13533,30 @@ textarea.form-control {
 .slider-item .img {
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
-  height: 100vh;
+  min-height: 300px; /* mobile ke liye image kaafi ho */
+  height: 100%;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 1;
 }
+
 
 .slide1-img {
   background-image: url('../images/img1.png');
-  background-position: center bottom; /* Image ko bottom se align karega */
+  background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
   position: absolute;
   top: -10%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 0;
 }
+
 
 .slide2-img {
   background-image: url('../images/img3.png');
@@ -13589,6 +13596,26 @@ nav.navbar {
   position: relative;
 }
 
+
+@media (max-width: 767px) {
+  .slide1-img {
+    position: relative !important;
+    top: 0 !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    z-index: 1;
+  }
+
+  .slider-item {
+    margin-bottom: 50px !important; /* gap from about section */
+  }
+
+  #about-section {
+    padding-top: 30px !important; /* optional extra space */
+  }
+}
+
+
 @media (max-width: 767px) {
   html, body {
     overflow-y: auto !important;
@@ -13624,9 +13651,24 @@ nav.navbar {
   .owl-carousel {
     overflow: visible !important;
   }
+
+  /* Yeh important hai scroll ke liye */
+  .owl-carousel .owl-stage,
+  .owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y !important;
+    touch-action: pan-y !important;
+  }
 }
 
 
+
+@media (max-width: 767px) {
+  .owl-carousel .owl-stage,
+  .owl-carousel.owl-drag .owl-item {
+    -ms-touch-action: pan-y !important;
+    touch-action: pan-y !important;
+  }
+}
 
 
 
