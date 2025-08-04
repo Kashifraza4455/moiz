@@ -328,4 +328,76 @@ $('.home-slider').owlCarousel({
   dots: true,
   autoHeight: false
 });
+// Simple Owl Carousel configuration for mobile scroll fix
+$(document).ready(function(){
+  $('.home-slider').owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    nav: false,
+    dots: true,
+    
+    // Enable touch but don't block scroll
+    touchDrag: true,
+    mouseDrag: true,
+    
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
+        dots: true,
+        autoplay: false // Turn off autoplay on mobile
+      },
+      768: {
+        items: 1,
+        nav: true,
+        dots: true,
+        autoplay: true
+      }
+    }
+  });
+  
+  // Force enable body scroll on mobile
+  if ($(window).width() < 768) {
+    $('body, html').css({
+      'overflow': 'auto',
+      'height': 'auto'
+    });
+    
+    // Remove any owl carousel height restrictions
+    $('.owl-stage-outer, .owl-stage').css({
+      'height': 'auto',
+      'overflow': 'visible'
+    });
+  }
+});
+$('.home-slider').owlCarousel({
+  items: 1,
+  loop: true,
+  autoplay: true,
+  autoplayTimeout: 5000,
+  smartSpeed: 1000,
+  animateOut: 'fadeOut'
+});
+
+$('.navbar-nav .nav-link').on('click', function () {
+  $('body').removeClass('menu-show').css({
+    overflow: 'auto',
+    position: 'relative',
+    height: 'auto'
+  });
+});
+
+
+
+// Menu hide & scroll enable on nav link click
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function () {
+    document.body.classList.remove('menu-show');
+    document.body.style.overflowY = 'auto';
+    document.body.style.position = 'relative';
+    document.body.style.height = 'auto';
+  });
+});
 
