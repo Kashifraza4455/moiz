@@ -13549,7 +13549,7 @@ textarea.form-control {
   background-repeat: no-repeat;
   background-attachment: scroll;
   position: absolute;
-  top: -10%;
+  top: -30%;
   right: 0;
   left: 0;
   bottom: 0;
@@ -13564,6 +13564,13 @@ textarea.form-control {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  position: absolute;
+  top: -10%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 0;
 }
 
 
@@ -13604,6 +13611,9 @@ nav.navbar {
     height: 300px !important;
     min-height: 300px !important;
     z-index: 1;
+  }
+  .owl-dots {
+    display: none !important;
   }
 
   .slider-item {
