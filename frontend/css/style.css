@@ -13541,21 +13541,26 @@ textarea.form-control {
   justify-content: center;
 }
 
-/* Slide 1: image upar align */
 .slide1-img {
   background-image: url('../images/img1.png');
-  background-position: center;
-  position: absolute;
-  top: -20%;
-}
-
-/* Slide 2: image thodi neeche */
-.slide2-img {
-  background-image: url('../images/img3.png');
-  background-position: center;
+  background-position: center bottom; /* Image ko bottom se align karega */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   position: absolute;
   top: -10%;
 }
+
+.slide2-img {
+  background-image: url('../images/img3.png');
+  background-position: center bottom; /* Same positioning */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+
+
 
 /* Optional overlay fix if needed */
 .overlay {
