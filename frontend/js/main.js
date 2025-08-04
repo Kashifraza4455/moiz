@@ -316,4 +316,16 @@ $(function () {
 	}
 
 });
+$('.home-slider').owlCarousel({
+  items: 1,
+  loop: true,
+  autoplay: true,
+  autoplayTimeout: 5000,
+  smartSpeed: 1000,
+  animateOut: 'fadeOut',
+  animateIn: 'fadeIn',
+  nav: false,
+  dots: true,
+  autoHeight: false
+});
 
