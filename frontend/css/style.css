@@ -13549,7 +13549,7 @@ textarea.form-control {
   background-repeat: no-repeat;
   background-attachment: scroll;
   position: absolute;
-  top: -30%;
+  top: -10%;
   right: 0;
   left: 0;
   bottom: 0;
@@ -13565,7 +13565,7 @@ textarea.form-control {
   background-repeat: no-repeat;
   background-attachment: scroll;
   position: absolute;
-  top: -10%;
+  top: 0;
   right: 0;
   left: 0;
   bottom: 0;
@@ -13603,42 +13603,24 @@ nav.navbar {
   position: relative;
 }
 
-
 @media (max-width: 767px) {
-  .slide1-img {
-    position: relative !important;
-    top: 0 !important;
-    height: 300px !important;
-    min-height: 300px !important;
-    z-index: 1;
-  }
-  .owl-dots {
-    display: none !important;
-  }
-
-  .slider-item {
-    margin-bottom: 50px !important; /* gap from about section */
-  }
-
-  #about-section {
-    padding-top: 30px !important; /* optional extra space */
-  }
-}
-
-
-@media (max-width: 767px) {
+  /* Body and html overflow fix for scroll */
   html, body {
     overflow-y: auto !important;
     height: auto !important;
     position: relative !important;
   }
-
+  .slide2-img{
+    position: absolute;
+    top: -50% !important;
+  }
   body.menu-show {
     overflow-y: auto !important;
     height: auto !important;
     position: relative !important;
   }
 
+  /* Hero section and slider height & overflow fix */
   .hero,
   .home-slider,
   .home-slider .owl-stage-outer,
@@ -13650,35 +13632,82 @@ nav.navbar {
     position: relative !important;
   }
 
-  .slide1-img,
-  .slide2-img {
-    min-height: 300px !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  /* Slider row layout stacked vertically on mobile */
+  .slider-item .row {
+    display: flex;
+    flex-direction: column;  /* Is se text upar aur image neeche aa jayega */
   }
 
+  /* Text container adjustments */
+  .text,
+  .text.px-5 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  /* Slider-item container margin bottom */
+  .slider-item {
+    height: auto !important;
+    margin-bottom: 50px !important; /* Thoda zyada gap bottom se */
+    padding: 0 !important;
+  }
+
+  /* Image styles */
+  .slide1-img,
+  .slide2-img,
+  .slider-item .img {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    min-height: 350px !important; /* thoda aur bada */
+    height: 60vh !important; /* screen height ke hisaab se */
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    z-index: 1;
+    margin-top: 10px; /* thoda gap text ke neeche */
+  }
+
+  /* Remove Owl carousel dots on mobile */
+  .owl-dots {
+    display: none !important;
+  }
+
+  /* Owl carousel overflow fix for touch scroll */
   .owl-carousel {
     overflow: visible !important;
   }
 
-  /* Yeh important hai scroll ke liye */
   .owl-carousel .owl-stage,
   .owl-carousel.owl-drag .owl-item {
     -ms-touch-action: pan-y !important;
     touch-action: pan-y !important;
   }
+
+  /* About section padding top for gap */
+  #about-section {
+    padding-top: 30px !important;
+  }
 }
-
-
-
 @media (max-width: 767px) {
-  .owl-carousel .owl-stage,
-  .owl-carousel.owl-drag .owl-item {
-    -ms-touch-action: pan-y !important;
-    touch-action: pan-y !important;
+  .slider-item .col-md-6.d-flex.align-items-center {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .slider-item .text {
+    width: 100% !important;
   }
 }
+
 
 
 
