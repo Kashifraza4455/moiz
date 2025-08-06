@@ -34,7 +34,9 @@
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
-
+body{
+  overflow-y: hidden !important;
+}
 *,
 *::before,
 *::after {
@@ -4924,7 +4926,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
-  background-color: transparent;
+  /* background-color: transparent; */
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
@@ -12057,6 +12059,26 @@ h5,
   font-size: 24px;
   text-transform: uppercase;
 }
+/* Remove Bootstrap's image */
+.navbar-toggler-icon {
+  background-image: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  right: 3px;
+}
+
+/* Add custom icon */
+.navbar-toggler-icon::before {
+  content: "\2630"; /* ☰ */
+  font-size: 24px;
+  color: black;
+  line-height: 1;
+}
+
 
 .hero h3.vr {
   -webkit-writing-mode: vertical-lr;
@@ -13294,6 +13316,7 @@ textarea.form-control {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
 
 .ftco-footer-social li a:hover {
   color: #fff;
