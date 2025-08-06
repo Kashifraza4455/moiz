@@ -4926,7 +4926,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
-  /* background-color: transparent; */
+  background-color: black;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
@@ -12068,14 +12068,14 @@ h5,
   height: 30px;
   width: 30px;
   position: relative;
-  right: 3px;
+  right: 5px;
 }
 
 /* Add custom icon */
 .navbar-toggler-icon::before {
   content: "\2630"; /* ☰ */
   font-size: 24px;
-  color: black;
+  color: white;
   line-height: 1;
 }
 
@@ -13639,6 +13639,7 @@ nav.navbar {
     position: absolute;
     top: -50% !important;
   }
+
   body.menu-show {
     overflow-y: auto !important;
     height: auto !important;
@@ -13666,7 +13667,16 @@ nav.navbar {
   /* Text container adjustments */
   .text,
   .text.px-5 {
-    padding-left: 15px !important;
+    /* padding-left: 15px !important; */
+    padding-right: 15px !important;
+    padding-top: 0.5rem !important;  
+    padding-bottom: 0.5rem !important;
+    /* text-align: center; */
+    margin-bottom: 15px;
+  }
+  #text 
+  .text.px-5 {
+     padding-left: 15px !important;
     padding-right: 15px !important;
     padding-top: 0.5rem !important;  
     padding-bottom: 1.5rem !important;
