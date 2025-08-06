@@ -13543,23 +13543,23 @@ textarea.form-control {
 
 
 .slide1-img {
-  background-image: url('../images/img1.png');
+  background-image: url('../images/img9.jpg');
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
   position: absolute;
-  top: -10%;
+  top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  height: 100%;
+  height: 50%;
   z-index: 0;
 }
 
 
 .slide2-img {
-  background-image: url('../images/img3.png');
+  background-image: url('../images/img0.png');
   background-position: center bottom; /* Same positioning */
   background-size: cover;
   background-repeat: no-repeat;
@@ -13643,7 +13643,7 @@ nav.navbar {
   .text.px-5 {
     padding-left: 15px !important;
     padding-right: 15px !important;
-    padding-top: 1.5rem !important;
+    padding-top: 0.5rem !important;  
     padding-bottom: 1.5rem !important;
     text-align: center;
     margin-bottom: 15px;
@@ -13655,7 +13655,9 @@ nav.navbar {
     margin-bottom: 50px !important; /* Thoda zyada gap bottom se */
     padding: 0 !important;
   }
-
+  .ftco-about{
+    margin-top: 100px;
+  }
   /* Image styles */
   .slide1-img,
   .slide2-img,
@@ -13672,7 +13674,7 @@ nav.navbar {
     background-position: center center !important;
     background-repeat: no-repeat !important;
     z-index: 1;
-    margin-top: 10px; /* thoda gap text ke neeche */
+    /* margin-top: 10px;  */
   }
 
   /* Remove Owl carousel dots on mobile */
@@ -13798,7 +13800,7 @@ nav.navbar {
 .block-23 ul li .icon,
 .block-23 ul li .text {
   display: table-cell;
-  vertical-align: top;
+  /* vertical-align: top; */
 }
 
 .block-23 ul li .icon {
