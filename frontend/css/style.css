@@ -13540,7 +13540,9 @@ textarea.form-control {
   position: relative;
   z-index: 1;
 }
-
+.loc{
+  margin-top: 20px !important;
+}
 
 .slide1-img {
   background-image: url('../images/img9.jpg');
