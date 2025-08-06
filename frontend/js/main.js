@@ -410,4 +410,17 @@ document.querySelectorAll('.nav-link').forEach(link => {
     document.body.style.height = 'auto';
   });
 });
+ window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    const toggler = document.querySelector(".navbar-toggler");
 
+    if (!navbar || !toggler) return;
+
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+      toggler.classList.add("dark-toggle");
+    } else {
+      navbar.classList.remove("scrolled");
+      toggler.classList.remove("dark-toggle");
+    }
+  });
