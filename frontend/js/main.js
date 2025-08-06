@@ -425,27 +425,52 @@ document.querySelectorAll('.nav-link').forEach(link => {
     }
   });
 
-   const form = document.getElementById("contact-form");
+  const form = document.getElementById("contact-form");
   const submitBtn = document.getElementById("submit-btn");
   const btnText = document.getElementById("btn-text");
   const btnLoader = document.getElementById("btn-loader");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent default form submission
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-    // Show loader and disable button
-    btnText.textContent = "Sending...";
+    // Show loader in button
     btnLoader.classList.remove("d-none");
+    btnText.textContent = "Sending...";
     submitBtn.disabled = true;
 
-    // Simulate sending (like fetch API or form submission)
-    setTimeout(() => {
-      // Form sent (you can place your real submission logic here)
-      btnText.textContent = "Send Message";
-      btnLoader.classList.add("d-none");
-      submitBtn.disabled = false;
-      form.reset(); // Reset form fields
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value,
+    };
 
-      alert("Message sent successfully!");
-    }, 2000); // Simulated 2 seconds delay
+    try {
+      const res = await fetch("http://localhost:3001/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      // Reset UI
+      btnLoader.classList.add("d-none");
+      btnText.textContent = "Send Message";
+      submitBtn.disabled = false;
+
+      if (res.ok) {
+        form.reset();
+        alert("✅ Message sent successfully!");
+      } else {
+        alert("❌ Failed to send: " + data.error);
+      }
+    } catch (error) {
+      btnLoader.classList.add("d-none");
+      btnText.textContent = "Send Message";
+      submitBtn.disabled = false;
+      alert("❌ Error: " + error.message);
+    }
   });
