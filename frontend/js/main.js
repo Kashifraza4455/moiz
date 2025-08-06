@@ -446,7 +446,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     };
 
     try {
-      const res = await fetch("http://localhost:3001/send-email", {
+      const res = await fetch("https://moiz.onrender.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -670,6 +670,7 @@
 				alert("✅ Email sent successfully!");
 				form.reset();
 			} else {
+				console.log(JSON.stringify(formData));
 				alert("❌ Failed: " + result.error);
 			}
 		});
