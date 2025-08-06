@@ -13631,7 +13631,7 @@ nav.navbar {
 @media (max-width: 767px) {
   /* Body and html overflow fix for scroll */
   html, body {
-    overflow-y: hidden !important;
+    overflow-y: auto !important;
     height: auto !important;
     position: relative !important;
   }
