@@ -424,3 +424,28 @@ document.querySelectorAll('.nav-link').forEach(link => {
       toggler.classList.remove("dark-toggle");
     }
   });
+
+   const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const btnText = document.getElementById("btn-text");
+  const btnLoader = document.getElementById("btn-loader");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Show loader and disable button
+    btnText.textContent = "Sending...";
+    btnLoader.classList.remove("d-none");
+    submitBtn.disabled = true;
+
+    // Simulate sending (like fetch API or form submission)
+    setTimeout(() => {
+      // Form sent (you can place your real submission logic here)
+      btnText.textContent = "Send Message";
+      btnLoader.classList.add("d-none");
+      submitBtn.disabled = false;
+      form.reset(); // Reset form fields
+
+      alert("Message sent successfully!");
+    }, 2000); // Simulated 2 seconds delay
+  });
