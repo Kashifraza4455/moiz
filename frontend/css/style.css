@@ -13573,30 +13573,34 @@ textarea.form-control {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  height: 50%;
+  position: relative;
+  height: 100vh;
+  width: 100%;
   z-index: 0;
 }
-
 
 .slide2-img {
   background-image: url('../images/img0.png');
-  background-position: center bottom; /* Same positioning */
+  background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  height: 100%;
+  position: relative;
+  height: 100vh;
+  width: 100%;
   z-index: 0;
 }
+#home-section,
+.home-slider,
+.slider-item,
+.slider-item .row {
+  height: 100vh;
+  overflow: hidden;       /* Vertical overflow block karo */
+  margin: 0;
+  width: 100%;
+}
+
+
 
 
 
@@ -13628,13 +13632,17 @@ nav.navbar {
   position: relative;
 }
 
+
 @media (max-width: 767px) {
   /* Body and html overflow fix for scroll */
-  html, body {
+  /* html, body {
     overflow-y: auto !important;
     height: auto !important;
     position: relative !important;
-  }
+  } */
+   body{
+    overflow-y: hidden !important;
+   }
   .slide2-img{
     position: absolute;
     top: -50% !important;
