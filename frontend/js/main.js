@@ -474,3 +474,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
       alert("❌ Error: " + error.message);
     }
   });
+  $('.home-slider').on('initialized.owl.carousel', function () {
+  $('body').css('overflow-y', 'hidden');
+});
