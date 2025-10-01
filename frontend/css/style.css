@@ -14333,3 +14333,48 @@ nav.navbar {
     stroke-dashoffset: -136px;
   }
 }
+
+
+html, body {
+  height: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+#home-section,
+.hero {
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* .home-slider,
+.owl-carousel,
+.owl-stage-outer,
+.owl-stage {
+  height: 100% !important;
+  overflow: hidden !important;
+  transform: none !important;
+} */
+/* 
+section {
+  position: relative;
+  z-index: 1;
+} */
+
+.overlay {
+  pointer-events: none;
+  display: none; 
+}
+.slider-item,
+.slider-item .text,
+.slider-item img {
+  transform: none !important;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
