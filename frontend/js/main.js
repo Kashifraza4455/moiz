@@ -83,7 +83,7 @@ $('.home-slider').owlCarousel({
   loop: true,
   items: 1,
   autoplay: true,
-  autoplayTimeout: 4000, // 4 sec
+  autoplayTimeout: 5000, // 5 sec
   smartSpeed: 800,
   animateOut: 'fadeOut',
   touchDrag: true,
