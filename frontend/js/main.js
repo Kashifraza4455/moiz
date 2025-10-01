@@ -79,28 +79,28 @@
 
 
 	var carousel = function () {
-		$('.home-slider').owlCarousel({
-			loop: true,
-			autoplay: true,
-			margin: 0,
-			animateOut: 'fadeOut',
-			animateIn: 'fadeIn',
-			nav: false,
-			autoplayHoverPause: false,
-			items: 1,
-			navText: ["<span class='ion-md-arrow-back'></span>", "<span class='ion-chevron-right'></span>"],
-			responsive: {
-				0: {
-					items: 1
-				},
-				600: {
-					items: 1
-				},
-				1000: {
-					items: 1
-				}
-			}
-		});
+$('.home-slider').owlCarousel({
+  loop: true,
+  items: 1,
+  autoplay: true,
+  autoplayTimeout: 4000, // 4 sec
+  smartSpeed: 800,
+  animateOut: 'fadeOut',
+  touchDrag: true,
+  mouseDrag: true,
+  dots: true,
+  nav: true,  // agar arrows chahiye
+  navText: [
+    "<span class='ion-md-arrow-back'></span>", 
+    "<span class='ion-chevron-right'></span>"
+  ],
+  responsive: {
+    0: { items: 1 },
+    600: { items: 1 },
+    1000: { items: 1 }
+  }
+});
+
 		$('.carousel-testimony').owlCarousel({
 			center: true,
 			loop: true,
