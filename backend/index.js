@@ -1,14 +1,26 @@
+// index.js
 import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 
 dotenv.config();
+
 const app = express();
-app.use(cors(
-      
-));
+app.use(cors());
 app.use(express.json());
+
+// Email transporter setup
+let transporter;
+  console.log("Using Gmail SMTP for email transport");
+  // Local development using Gmail
+  transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.MAIL_USER,
+      pass: process.env.MAIL_PASS,
+    },
+  });
 
 app.post("/send-email", async (req, res) => {
   const { name, email, subject, message } = req.body;
@@ -17,16 +29,8 @@ app.post("/send-email", async (req, res) => {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS,
-    },
-  });
-
   const mailOptions = {
-    from: process.env.MAIL_USER,
+    from: process.env.MAIL_USER || "no-reply@example.com",
     to: process.env.MAIL_RECEIVER,
     subject: subject,
     html: `
