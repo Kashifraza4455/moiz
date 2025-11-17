@@ -618,7 +618,7 @@
 
         <div class="row block-9">
           <div class="col-md-8">
-            <form id="contact-form" class="bg-light p-4 p-md-5 contact-form">
+            <form id="#" class="bg-light p-4 p-md-5 contact-form">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -668,13 +668,13 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <button
-                      type="submit"
+                      type="#"
                       class="btn btn-primary py-3 px-5"
-                      id="submit-btn"
+                      
                     >
                       <span id="btn-text">Send Message</span>
                       <span
-                        id="btn-loader"
+                        id="#"
                         class="spinner-border spinner-border-sm d-none"
                         role="status"
                         aria-hidden="true"
@@ -898,60 +898,6 @@
     <!-- <script src="js/google-map.js"></script> -->
 
     <script src="js/main.js"></script>
-    <!-- index.html me script ke end me add karein -->
-    <script>
-      const isProduction =
-        window.location.hostname !== "localhost" &&
-        window.location.hostname !== "127.0.0.1";
 
-      const form1 = document.getElementById("contact-form");
-      const btn = document.getElementById("submit-btn");
-      const btnText1 = document.getElementById("btn-text");
-      const btnLoader1 = document.getElementById("btn-loader");
-
-      form1.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        btn.disabled = true;
-        btnText1.textContent = "Sending...";
-        btnLoader1.classList.remove("d-none");
-
-        const formData = {
-          name: form1.name.value,
-          email: form1.email.value,
-          subject: form1.subject.value,
-          message: form1.message.value,
-        };
-
-        // const backendURL = isProduction
-        //   ? "https://moiz.onrender.com/send-email"
-        //   : "http://localhost:3001/send-email";
-
-        const backendURL = "http://localhost:3001/send-email";
-
-        try {
-          const res = await fetch(backendURL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-          });
-
-          const result = await res.json();
-
-          if (res.ok) {
-            alert("✅ Email sent successfully!");
-            form.reset();
-          } else {
-            alert("❌ Failed: " + (result.error || "Unknown error"));
-          }
-        } catch (err) {
-          alert("⚠️ Network error: " + err.message);
-        }
-
-        btn.disabled = false;
-        btnText1.textContent = "Send Message";
-        btnLoader1.classList.add("d-none");
-      });
-    </script>
   </body>
 </html>
